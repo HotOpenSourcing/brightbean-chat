@@ -7,21 +7,23 @@
     "node": ">=24"
   },
   "scripts": {
-    "build:css": "tailwindcss --input ./apps/theme/static_src/src/styles.css --output ./apps/theme/static/css/dist/styles.css --minify",
+    "build:css": "node init && tailwindcss --input ./apps/theme/static_src/src/styles.css --output ./apps/theme/static/css/dist/styles.css --minify",
     "watch:css": "tailwindcss --input ./apps/theme/static_src/src/styles.css --output ./apps/theme/static/css/dist/styles.css --watch",
-    "build:js": "vite build --config apps/flows/frontend/vite.config.mts",
+    "build:js": "node init && vite build --config apps/flows/frontend/vite.config.mts",
     "watch:js": "vite build --config apps/flows/frontend/vite.config.mts --watch",
     "typecheck:js": "tsc --noEmit --project apps/flows/frontend/tsconfig.json",
     "test:js": "vitest run --config apps/flows/frontend/vite.config.mts",
     "vendor": "node scripts/vendor-js.mjs",
-    "build": "npm run build:css && npm run build:js && npm run vendor"
+    "build": "node init && npm run build:css && npm run build:js && npm run vendor"
   },
   "dependencies": {
     "@xyflow/react": "12.11.3",
     "alpinejs": "3.16.3",
     "chart.js": "4.5.1",
+    "dotenv": "^8.2.0",
     "flatpickr": "4.6.13",
     "htmx.org": "2.0.10",
+    "node-fetch": "^3.3.2",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "sortablejs": "1.15.7",
@@ -39,7 +41,7 @@
     "jsdom": "30.0.1",
     "tailwindcss": "4.3.3",
     "typescript": "7.0.2",
-    "vite": "8.2.2",
+    "vite": "8.3.5",
     "vitest": "4.1.11"
   },
   "overrides": {

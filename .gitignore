@@ -148,7 +148,6 @@ activemq-data/
 *.sage.py
 
 # Environments
-.env
 .envrc
 .venv
 env/
@@ -249,3 +248,4 @@ apps/flows/static/flows/builder/
 
 # macOS
 .DS_Store
+config.bat
